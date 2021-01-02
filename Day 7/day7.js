@@ -104,3 +104,49 @@ const getBagsThatCanContainShinyGold = (bagsColors) => {
 getBagsThatCanContainShinyGold(bagsColors);
 
 console.log("\nSolution for Day 7 - First puzzle:", result.length);
+
+/*
+    Algorithm for Day 7 - Second puzzle
+
+    1. find the shiny gold bag
+    2. loop through contents
+    3. sum the number of bags
+    4. multiply by the quantity of bags containing the actual bag
+    5. loop through each bag inside
+
+    the goal is to know how many bags a single shiny gold bag can store
+
+    comment: this one was hard to describe, but the algorithm and the problem urges for recursion, since we
+    are looking into bags inside bags ("baginception"), and I was looking for a way to solve without recursion
+*/
+
+// find the shiny gold bag
+const shinyGoldBag = luggageRules.filter(value => value.indexOf("shiny gold") === 0)[0];
+
+// loop through each stored bag
+const storedBags = shinyGoldBag.split("contain")[1].split(",");
+const countBags = (bags, qty) => {
+    let count = 0;
+    if (bags.indexOf(" no other bags.") >= 0) {
+        return qty; // it's the last bag
+    } else {
+        // sum the number of bags
+        bags.forEach(value => {
+            const qtyAndColor = value.trim().replace(".", "").split(" ");
+            
+            const actualQty = Number.parseInt(qtyAndColor[0]);
+            const actualColor = qtyAndColor.slice(1).join(" ");
+            const actualBag = luggageRules.filter(value => value.indexOf(actualColor) === 0)[0];
+                        
+            const newStoredBags = actualBag.split("contain")[1].split(",");
+            // multiply by the quantity of bags containing the actual bag
+            // loop through each bag inside            
+            count += qty * countBags(newStoredBags, actualQty); // ex: 2 (actualQty) vibrant plum bag contains newStoredBags
+        });
+        return count + qty; // remember to count the quantity of the actualBag, this will cause to count the shiny gold bag
+    }
+}
+
+const totalBags = countBags(storedBags, 1) - 1; // minus 1, we don't count the shiny gold bag 
+
+console.log("\nSolution for Day 7 - Second puzzle:", totalBags);
