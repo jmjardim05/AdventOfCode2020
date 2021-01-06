@@ -102,7 +102,7 @@ const checkSeats = (seat, coord, adjacent = 0) => {
 
                     // flags true depending on which direction we are facing
                     directions[direction] = true;
-                } else if (adjacent > 0) {
+                } else if (adjacent > 0 && i === adjacent) {
                     directions[direction] = true;    
                 }
             }
