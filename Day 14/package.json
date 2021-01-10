@@ -1,0 +1,16 @@
+{
+  "name": "day-14",
+  "version": "1.0.0",
+  "description": "Solution for day 14 of advent of code 2020",
+  "main": "day14.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [
+    "adventofcode",
+    "javascript",
+    "day14"
+  ],
+  "author": "João Marcos Jardim",
+  "license": "MIT"
+}

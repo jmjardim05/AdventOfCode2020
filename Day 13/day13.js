@@ -66,6 +66,43 @@ console.log("\nSolution for Day 13 - First puzzle:", nextBusId * minWaitTime, " 
     algorithm 2 - final optimization - still not found a solution, I'm feeling dumb :(
 */
 
+console.time("part2 - Optimized");
+const findEarliestTimeStamp = () => {
+    let arr = [ ...busesIds.map(value => Number.parseInt(value)) ];
+    const arr2 = busDepartures[1].split(",");
+
+    const minBusId = Math.min(...arr);
+    const minBusIdIndex = arr2.indexOf(minBusId.toString());
+
+    let maxBusId = Math.max(...arr);
+    let maxBusIdIndex = arr2.indexOf(maxBusId.toString());
+    
+    let offsetMinMax = maxBusIdIndex - minBusIdIndex;
+    const findTimeStampFactor = (i, id, offset, factor) => {
+        let found = false;
+        while (!found) {            
+            const nextBusTravel = id * factor + offset;
+            const y = nextBusTravel % maxBusId;
+            found = y === 0;
+            factor += i;
+        }
+        factor -= i;
+        const maxId = arr.splice(arr.indexOf(maxBusId), 1)[0];
+        maxBusId = Math.max(...arr);
+        maxBusIdIndex = arr2.indexOf(maxBusId.toString());
+        offsetMinMax = maxBusIdIndex - minBusIdIndex;
+        if (offsetMinMax !== 0) {
+            const nextIterator = i * maxId;
+            factor = findTimeStampFactor(nextIterator, minBusId, offsetMinMax, factor);
+        }
+        return factor;
+    }
+    return minBusId * findTimeStampFactor(1, minBusId, offsetMinMax, 1) - minBusIdIndex;
+}
+console.log("\nSolution for Day 13 - Second puzzle (optimized):", findEarliestTimeStamp());
+console.timeEnd("part2 - Optimized");
+
+// this is the original (bad) code
 console.time("part2");
 const allBuses = busDepartures[1].split(",").reduce((prev, value, index) => {
     if (value !== "x") {
@@ -75,8 +112,8 @@ const allBuses = busDepartures[1].split(",").reduce((prev, value, index) => {
 }, []);
 const maxBusId = Math.max(...busesIds.map(value => Number.parseInt(value)));
 const minBusId = Math.min(...busesIds.map(value => Number.parseInt(value)));
-const maxBusIdIndex = allBuses.find(value => value[0] == maxBusId)[1];//allBuses.indexOf(maxBusId.toString());
-const minBusIdIndex = allBuses.find(value => value[0] == minBusId)[1];//allBuses.indexOf(minBusId.toString());
+const maxBusIdIndex = allBuses.find(value => value[0] == maxBusId)[1];
+const minBusIdIndex = allBuses.find(value => value[0] == minBusId)[1];
 const offsetMinMax = maxBusIdIndex - minBusIdIndex;
 
 let next = 0;
