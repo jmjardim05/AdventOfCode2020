@@ -15,3 +15,7 @@ Example: To run Day 1
 `cd "Day 1"`
 
 `node day1.js`
+
+## Comments
+
+Second half of Day 13 still not good, couldn't find a way to optimize :( (Math: 10 x Me:0)
