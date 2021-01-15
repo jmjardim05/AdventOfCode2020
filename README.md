@@ -18,4 +18,6 @@ Example: To run Day 1
 
 ## Comments
 
-Second half of Day 13 still not good, couldn't find a way to optimize :( (Math: 10 x Me:0)
+~~Second half of Day 13 still not good, couldn't find a way to optimize :( (Math: 10 x Me:0)~~
+
+*Finally found a solution to second half Day 13 that is optimized yaaaaay! maybe I will explain it in another file*
