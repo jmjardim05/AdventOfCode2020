@@ -1,0 +1,28 @@
+{
+  "name": "day-16",
+  "version": "1.0.0",
+  "description": "Solution of Day 16 of Advento of Code 2020",
+  "main": "src/day16.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmjardim05/AdventOfCode2020.git"
+  },
+  "keywords": [
+    "adventofcode2020",
+    "javascript",
+    "day",
+    "16"
+  ],
+  "author": "João Marcos Jardim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmjardim05/AdventOfCode2020/issues"
+  },
+  "homepage": "https://github.com/jmjardim05/AdventOfCode2020#readme"
+}
