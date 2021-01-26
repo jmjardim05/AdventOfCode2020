@@ -1,0 +1,29 @@
+{
+  "name": "day-17",
+  "version": "1.0.0",
+  "description": "Solution of Day 17 of Advent Of Code 2020",
+  "main": "src/day17.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmjardim05/AdventOfCode2020.git"
+  },
+  "keywords": [
+    "adventofcode",
+    "2020",
+    "day",
+    "17",
+    "javascript"
+  ],
+  "author": "João Marcos Jardim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmjardim05/AdventOfCode2020/issues"
+  },
+  "homepage": "https://github.com/jmjardim05/AdventOfCode2020#readme"
+}
