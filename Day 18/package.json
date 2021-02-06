@@ -1,0 +1,22 @@
+{
+  "name": "day-18",
+  "version": "1.0.0",
+  "description": "Solution of Day 18 of Advent of Code 2020",
+  "main": "src/day18.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmjardim05/AdventOfCode2020/tree/main/Day%2018"
+  },
+  "keywords": [
+    "advent-of-code-2020",
+    "javascript"
+  ],
+  "author": "João Marcos Jardim",
+  "license": "MIT"
+}
