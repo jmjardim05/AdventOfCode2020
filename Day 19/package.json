@@ -1,0 +1,22 @@
+{
+  "name": "day-19",
+  "version": "1.0.0",
+  "description": "Solution for Day 19 of Advent of Code 2020",
+  "main": "src/day19.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmjardim05/AdventOfCode2020/tree/main/Day%2019"
+  },
+  "keywords": [
+    "advent-of-code-2020",
+    "javascript"
+  ],
+  "author": "João Marcos Jardim",
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  }
+}
